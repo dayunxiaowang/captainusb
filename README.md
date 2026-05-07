@@ -39,7 +39,6 @@ captainusb_hw.props                 .vcxproj 集成用属性表
 
 `firmware/captainusb.bit` 用 Vivado 加载到 FPGA，`captainusb.bin` 用于固化到板载 SPI flash。
 
-板载用户 LED 未在该比特流中接出。设备上电后只有 PCIe 电源指示灯亮；链路状态与运行状态请通过 `lspci` 或读取 `CUSB_REG_STATUS`、`CUSB_REG_*_COUNT` 系列寄存器确认。
 
 ## 集成
 
