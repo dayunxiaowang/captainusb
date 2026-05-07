@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  消费者 .vcxproj 在 Microsoft.Cpp.props 之后 Import 本文件，
+  自动配置 include 路径与 captainusb_hw.lib 链接依赖。
+
+    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+    <Import Project="...\captainusb_hw.props" />
+
+  Pool tag: 'CbHW'
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <CaptainUsbHwRoot>$(MSBuildThisFileDirectory)</CaptainUsbHwRoot>
+    <CaptainUsbHwIncludeDir>$(CaptainUsbHwRoot)include</CaptainUsbHwIncludeDir>
+    <CaptainUsbHwLibDir>$(CaptainUsbHwRoot)bin\$(Platform)\$(Configuration)</CaptainUsbHwLibDir>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(CaptainUsbHwIncludeDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(CaptainUsbHwLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>captainusb_hw.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+</Project>
